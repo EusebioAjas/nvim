@@ -1,3 +1,3 @@
-./plugin/
-./undodir/
-./lua/undodir
+plugin/
+undodir/
+lua/undodir
