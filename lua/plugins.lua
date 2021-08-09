@@ -22,7 +22,6 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
-  -- conquer of completion
   -- Galaxy line 
   use 'glepnir/galaxyline.nvim'
   -- Telescope
@@ -39,7 +38,7 @@ return require('packer').startup(function()
   -- Ruby and Rails 
   use 'tpope/vim-endwise'
   use 'tpope/vim-rails'
-  -- es7 and react snippets
+  -- es6 and react snippets
   use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
   -- Github
   use {
