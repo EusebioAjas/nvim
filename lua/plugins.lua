@@ -20,6 +20,10 @@ return require('packer').startup(function()
   -- Autocomplete and languge pack
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
+  -- Treesitter
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  -- use 'nvim-treesitter/playground'
+  use 'p00f/nvim-ts-rainbow'
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
   -- Galaxy line 
@@ -40,13 +44,10 @@ return require('packer').startup(function()
   use 'tpope/vim-rails'
   -- es6 and react snippets
   use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
-  -- Github
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    }
-  }
-  -- General
+  -- Git
+  use 'TimUntersberger/neogit'
+  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  -- General plugins
   use 'windwp/nvim-autopairs'
+  use 'kevinhwang91/nvim-bqf'
 end)
