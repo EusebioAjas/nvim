@@ -14,6 +14,8 @@ require('nv-bufferline')
 require('nv-gitsigns')
 require('nv-autopairs')
 require('nv-telescope')
+require('nv-nvimtree')
+require('nv-treesitter')
 
 -- LSP 
 require('lsp.solargraph-ls');
