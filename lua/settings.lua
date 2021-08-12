@@ -1,38 +1,63 @@
-vim.o.hidden = true
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.wrap = false
-vim.o.encoding = "utf-8"
-vim.o.pumheight = 10
-vim.o.fileencoding = "utf-8"
-vim.o.ruler = true
-vim.o.cmdheight = 2
-vim.o.mouse = "a"
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.wo.t_Co = "256"
-vim.o.termguicolors = true
-vim.o.conceallevel = 0
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.smarttab = true
-vim.o.expandtab = true
-vim.o.smartindent = true
-vim.autoindent = true
-vim.o.laststatus = 2
-vim.o.cursorline = true
-vim.o.background = "dark"
-vim.o.showtabline = 2
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.scrolloff = 8 -- doesn't work
-vim.o.signcolumn = "yes"
-vim.o.updatetime = 300
-vim.o.timeoutlen = 500
-vim.o.clipboard = "unnamedplus"
-vim.o.incsearch = true
-vim.o.undodir = "../undodir/"
-vim.o.undofile = true
-vim.o.listchars = "eol:⏎,tab:>-,trail:·,space:·,extends:>,precedes:<"
-vim.o.list = true
- 
+local M = {}
+
+CACHE_PATH = vim.fn.stdpath "cache"
+
+M.load_options = function()
+  local opt = vim.opt
+  local default_options = {
+    hidden = true,
+    number = true,
+    relativenumber = true,
+    wrap = false,
+    encoding = "utf-8",
+    pumheight = 10,
+    fileencoding = "utf-8",
+    ruler = true,
+    cmdheight = 2,
+    mouse = "a",
+    splitbelow = true,
+    splitright = true,
+    termguicolors = true,
+    conceallevel = 0,
+    tabstop = 2,
+    shiftwidth = 2,
+    smarttab = true,
+    expandtab = true,
+    smartindent = true,
+    autoindent = true,
+    laststatus = 2,
+    cursorline = true,
+    background = "dark",
+    showtabline = 2,
+    backup = false,
+    writebackup = false,
+    number = true,
+    relativenumber = true,
+    scrolloff = 8, -- doesn't work
+    signcolumn = "yes",
+    updatetime = 300,
+    timeoutlen = 500,
+    clipboard = "unnamedplus",
+    incsearch = true,
+    undodir = CACHE_PATH .. "/undodir",
+    undofile = true,
+    listchars = "eol:⏎,tab:>-,trail:·,space:·,extends:>,precedes:<",
+    list = true,
+    --showmode =false,
+    spelllang = "en"
+  }
+
+  opt.shortmess:append "c"
+
+  for k, v in pairs(default_options) do
+    vim.opt[k] = v
+  end
+
+end
+
+M.load_commands = function()
+  local cmd = vim.cmd
+  cmd "set whichwrap+=<,>,[,],h,l"
+end
+
+return M
