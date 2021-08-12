@@ -22,7 +22,7 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
   -- Treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  -- use 'nvim-treesitter/playground'
+  use 'nvim-treesitter/playground'
   use 'p00f/nvim-ts-rainbow'
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -31,7 +31,6 @@ return require('packer').startup(function()
   -- Telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-media-files.nvim'
   -- Colorscheme
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'norcalli/nvim-colorizer.lua'
