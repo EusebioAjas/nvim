@@ -2,8 +2,9 @@
 require('plugins')
 
 -- General
-require('keymappings')
-require('settings')
+require('keymappings').setup()
+require('settings').load_options()
+require('settings').load_commands()
 require('colorscheme')
 
 -- Plugins
