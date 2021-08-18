@@ -17,8 +17,8 @@ require('nv-autopairs')
 require('nv-telescope')
 require('nv-nvimtree')
 require('nv-treesitter')
+require('nv-lspsaga')
 
 -- LSP 
-require('lsp.solargraph-ls');
-require('lsp.tsserver-ls');
-require('lsp.bash-ls');
+require('lsp')
+
