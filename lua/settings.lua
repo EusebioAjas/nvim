@@ -5,6 +5,7 @@ CACHE_PATH = vim.fn.stdpath "cache"
 M.load_options = function()
   local opt = vim.opt
   local default_options = {
+    completeopt = {"menuone", "noselect"},
     hidden = true,
     number = true,
     relativenumber = true,

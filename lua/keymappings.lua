@@ -7,7 +7,7 @@ function M.load_normal_mode_keymaps()
   -- explorer
   vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
   -- alternative to save
-  vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+  --vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
   -- executes :u(undo) like Command+z or Ctrl+z
   vim.api.nvim_set_keymap('n', '<Leader>z', ':u<CR>', { silent = true })
   -- move line/block
