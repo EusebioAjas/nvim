@@ -34,7 +34,6 @@ return require('packer').startup(function()
   -- Colorscheme
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'norcalli/nvim-colorizer.lua'
-  use 'kevinhwang91/nvim-bqf'
   use 'unblevable/quick-scope'
   -- BufferLine
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
