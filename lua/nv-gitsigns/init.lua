@@ -41,5 +41,8 @@
   update_debounce = 100,
   status_formatter = nil, -- Use default
   word_diff = false,
-  use_internal_diff = true,  -- If luajit is present
+  diff_opts = {
+    internal = true,  -- If luajit is present
+  }
 }
+
