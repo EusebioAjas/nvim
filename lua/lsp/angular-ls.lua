@@ -64,3 +64,4 @@ require'lspconfig'.angularls.setup{
     },
   },
 }
+

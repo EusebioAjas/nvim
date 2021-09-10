@@ -33,3 +33,4 @@ nvim_lsp.tsserver.setup {
     "typescriptreact.tsx"
   }
 }
+

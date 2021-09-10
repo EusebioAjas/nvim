@@ -1,1 +1,2 @@
 require'lspconfig'.bashls.setup{}
+
