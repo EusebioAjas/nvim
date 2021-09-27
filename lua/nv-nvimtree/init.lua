@@ -1,6 +1,6 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 -- default mappings
-vim.g.nvim_tree_bindings = {
+local list = {
   { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
   { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
   { key = "<C-v>",                        cb = tree_cb("vsplit") },
@@ -64,3 +64,6 @@ vim.g.nvim_tree_bindings = {
 --    ["-"] = tree_cb("dir_up"),
 --    ["q"] = tree_cb("close")
 --}
+
+require'nvim-tree'.setup{}
+
