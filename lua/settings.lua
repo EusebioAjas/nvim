@@ -45,7 +45,7 @@ M.load_options = function()
     listchars = "eol:⏎,tab:>-,trail:·,space:·,extends:>,precedes:<",
     list = true,
     --showmode =false,
-    spelllang = "en"
+    spelllang = "en,cjk"
   }
 
   opt.shortmess:append "c"

@@ -9,8 +9,8 @@ function M.load_normal_mode_keymaps()
   vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', opts)
   -- no hl
   vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', opts)
-  -- explorer
-  vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opts)
+  --nvim tree
+  vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', noremap_opt)
   -- alternative to save
   vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', opts)
   -- executes :u(undo) like Command+z or Ctrl+z
