@@ -49,3 +49,4 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs'
   use 'kevinhwang91/nvim-bqf'
 end)
+
