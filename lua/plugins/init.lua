@@ -1,0 +1,11 @@
+require('plugins.autopairs')
+require('plugins.bufferline')
+require('plugins.colorizer')
+require('plugins.compe')
+require('plugins.galaxyline')
+require('plugins.gitsigns')
+require('plugins.lspsaga')
+require('plugins.nvimtree')
+require('plugins.telescope')
+require('plugins.treesitter')
+
