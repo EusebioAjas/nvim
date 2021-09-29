@@ -16,8 +16,8 @@ function M.load_normal_mode_keymaps()
   -- executes :u(undo) like Command+z or Ctrl+z
   vim.api.nvim_set_keymap('n', '<Leader>z', ':u<CR>', silent_opt)
   -- move line/block
-  vim.api.nvim_set_keymap('n', 'K', ':m .-2<CR>==', opts)
-  vim.api.nvim_set_keymap('n', 'J', ':m .+1<CR>==', opts)
+  vim.api.nvim_set_keymap('n', '<S-k>', ':m .-2<CR>==', noremap_opt)
+  vim.api.nvim_set_keymap('n', '<S-j>', ':m .+1<CR>==', noremap_opt)
   -- better window movement
   vim.api.nvim_set_keymap('n', 'sh', '<C-w>h', silent_opt)
   vim.api.nvim_set_keymap('n', 'sj', '<C-w>j', silent_opt)
@@ -33,22 +33,25 @@ function M.load_insert_mode_keymaps()
   vim.api.nvim_set_keymap('i', 'jk', '<ESC>', opts)
   vim.api.nvim_set_keymap('i', 'kj', '<ESC>', opts)
   -- move current line/block
-  vim.api.nvim_set_keymap('i', '<A-j>', '<ESC>:m .+1<CR>==gi', opts)
-  vim.api.nvim_set_keymap('i', '<A-k>', '<ESC>:m .-2<CR>==gi', opts)
+  vim.api.nvim_set_keymap('i', '<S-j>', '<ESC>:m .+1<CR>==gi', noremap_opt)
+  vim.api.nvim_set_keymap('i', '<S-k>', '<ESC>:m .-2<CR>==gi', noremap_opt)
   -- TAB complete
   vim.api.nvim_set_keymap('i', "<expr> <CR>", 'pumvisible() ? \"\\<C-y>\" : \"\\<CR>\"', noremap_opt)
 end
 
 function M.load_visual_mode_keymaps()
--- better indenting
+  -- better indenting
   vim.api.nvim_set_keymap('v', '<', '<gv', opts)
   vim.api.nvim_set_keymap('v', '>', '>gv', opts)
+  -- move current line/block
+  vim.api.nvim_set_keymap('v', '<S-k>', [[:m '<-2<CR>gv==gv]], noremap_opt)
+  vim.api.nvim_set_keymap('v', '<S-j>', [[:m '>+1<CR>gv==gv]], noremap_opt)
 end
 
 function M.load_visual_block_mode_keymaps()
   -- move selected line / block of text in visual, insert and normal mode
-  vim.api.nvim_set_keymap('x', '<A-j>', ':m \'>+1<CR>gv-gv\'', opts)
-  vim.api.nvim_set_keymap('x', '<A-k>', ':m \'<-2<CR>gv-gv\'', opts)
+  vim.api.nvim_set_keymap('x', '<S-j>', [[:m '>+1<CR>gv-gv]], noremap_opt)
+  vim.api.nvim_set_keymap('x', '<S-k>', [[:m '<-2<CR>gv-gv]], noremap_opt)
 end
 
 function M.setup()
