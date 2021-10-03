@@ -5,47 +5,46 @@ CACHE_PATH = vim.fn.stdpath "cache"
 M.load_options = function()
   local opt = vim.opt
   local default_options = {
-    completeopt = {"menuone", "noselect"},
-    hidden = true,
-    number = true,
-    relativenumber = true,
-    wrap = false,
-    encoding = "utf-8",
-    pumheight = 10,
-    fileencoding = "utf-8",
-    ruler = true,
+    autoindent = true,
+    background = "dark",
+    backup = false,
+    clipboard = "unnamedplus",
     cmdheight = 2,
+    completeopt = {"menuone", "noselect"},
+    conceallevel = 0,
+    cursorline = true,
+    encoding = "utf-8",
+    expandtab = true,
+    fileencoding = "utf-8",
+    hidden = true,
+    incsearch = true,
+    laststatus = 2,
+    list = true,
+    listchars = "eol:⏎,tab:>-,trail:·,space:·,extends:>,precedes:<",
     mouse = "a",
+    number = true,
+    pumheight = 10,
+    relativenumber = true,
+    ruler = true,
+    scrolloff = 8,
+    sidescrolloff = 8,
+    shiftwidth = 2,
+    showtabline = 2,
+    signcolumn = "yes",
+    smartindent = true,
+    smarttab = true,
+    spelllang = "en",
     splitbelow = true,
     splitright = true,
-    termguicolors = true,
-    conceallevel = 0,
     tabstop = 2,
-    shiftwidth = 2,
-    smarttab = true,
-    expandtab = true,
-    smartindent = true,
-    autoindent = true,
-    laststatus = 2,
-    cursorline = true,
-    background = "dark",
-    showtabline = 2,
-    backup = false,
-    writebackup = false,
-    number = true,
-    relativenumber = true,
-    scrolloff = 8, -- doesn't work
-    signcolumn = "yes",
-    updatetime = 300,
+    termguicolors = true,
+    colorcolumn = "101",
     timeoutlen = 500,
-    clipboard = "unnamedplus",
-    incsearch = true,
     undodir = CACHE_PATH .. "/undodir",
     undofile = true,
-    listchars = "eol:⏎,tab:>-,trail:·,space:·,extends:>,precedes:<",
-    list = true,
-    --showmode =false,
-    spelllang = "en,cjk"
+    updatetime = 300,
+    wrap = false,
+    writebackup = false,
   }
 
   opt.shortmess:append "c"
@@ -59,6 +58,15 @@ end
 M.load_commands = function()
   local cmd = vim.cmd
   cmd "set whichwrap+=<,>,[,],h,l"
+  
+  -- transparent window
+  cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
+  cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none"
+  cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
+  cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
+  cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
+  cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
+  cmd "let &fcs='eob: '"
 end
 
 return M
