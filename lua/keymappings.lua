@@ -3,6 +3,7 @@ M = {}
 local opts = { noremap = true, silent = true }
 local silent_opt = { silent = true }
 local noremap_opt = { noremap = true }
+local expr_noremap_opt = { expr = true, noremap = true }
 
 function M.load_normal_mode_keymaps()
   -- NORMAL MODE
@@ -36,7 +37,10 @@ function M.load_insert_mode_keymaps()
   vim.api.nvim_set_keymap('i', '<S-j>', '<ESC>:m .+1<CR>==gi', noremap_opt)
   vim.api.nvim_set_keymap('i', '<S-k>', '<ESC>:m .-2<CR>==gi', noremap_opt)
   -- TAB complete
-  vim.api.nvim_set_keymap('i', "<expr> <CR>", 'pumvisible() ? \"\\<C-y>\" : \"\\<CR>\"', noremap_opt)
+  vim.api.nvim_set_keymap('i', '<C-j>', 'pumvisible() ? "\\<down>" : "\\<C-j>"', expr_noremap_opt)
+  vim.api.nvim_set_keymap('i', '<C-k>', 'pumvisible() ? "\\<up>" : "\\<C-k>"', expr_noremap_opt)
+  vim.api.nvim_set_keymap('i', '<CR-m>', 'pumvisible() ? complete_info()["selected"] != "-1" ? "\\<Plug>(completion_confirm_completion)" : "\\<c-e>\\<CR>" : "\\<CR>"', { expr = true })
+  --vim.api.nvim_set_keymap('i', '<C-m>', 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>', {expr = true })
 end
 
 function M.load_visual_mode_keymaps()
@@ -50,8 +54,8 @@ end
 
 function M.load_visual_block_mode_keymaps()
   -- move selected line / block of text in visual, insert and normal mode
-  vim.api.nvim_set_keymap('x', '<S-j>', [[:m '>+1<CR>gv-gv]], noremap_opt)
-  vim.api.nvim_set_keymap('x', '<S-k>', [[:m '<-2<CR>gv-gv]], noremap_opt)
+  vim.api.nvim_set_keymap('x', '<S-j>', [[:m '>+1<CR>gv-gv]], expr_noremap_opt)
+  vim.api.nvim_set_keymap('x', '<S-k>', [[:m '<-2<CR>gv-gv]], expr_noremap_opt)
 end
 
 function M.setup()
