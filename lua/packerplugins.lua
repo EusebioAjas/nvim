@@ -20,6 +20,8 @@ return require('packer').startup(function()
   -- Autocomplete and languge pack
   use 'hrsh7th/nvim-compe'
   use 'hrsh7th/vim-vsnip'
+  -- formatter
+  use 'mhartington/formatter.nvim'
   -- Treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'nvim-treesitter/playground'
