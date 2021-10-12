@@ -27,6 +27,8 @@ function M.load_normal_mode_keymaps()
   -- split window
   vim.api.nvim_set_keymap('n', 'ss', ':split<Return><C-w>w', silent_opt)
   vim.api.nvim_set_keymap('n', 'sv', ':vsplit<Return><C-w>w', silent_opt)
+  -- formatter
+  vim.api.nvim_set_keymap('n', '<Leader>fo', ':Format<CR>', silent_opt)
 end
 
 function M.load_insert_mode_keymaps()
