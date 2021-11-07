@@ -8,5 +8,5 @@ require('plugins.lspsaga')
 require('plugins.nvimtree')
 require('plugins.telescope')
 require('plugins.treesitter')
-require('plugins.formatter')
+--require('plugins.formatter')
 
