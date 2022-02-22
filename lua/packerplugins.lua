@@ -50,5 +50,6 @@ return require('packer').startup(function()
   -- General plugins
   use 'windwp/nvim-autopairs'
   use 'kevinhwang91/nvim-bqf'
+  use 'akinsho/toggleterm.nvim'
 end)
 
