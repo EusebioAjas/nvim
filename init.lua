@@ -10,6 +10,3 @@ require('colorscheme')
 -- Plugins
 require('plugins')
 
--- LSP 
-require('lsp')
-
