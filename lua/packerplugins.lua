@@ -40,7 +40,7 @@ return require('packer').startup(function()
     }
   }
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use ({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   use 'nvim-treesitter/playground'
   use 'p00f/nvim-ts-rainbow'
 
@@ -68,6 +68,7 @@ return require('packer').startup(function()
   -- Git
   use 'TimUntersberger/neogit'
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use 'mbbill/undotree'
 
   -- General plugins
   use 'windwp/nvim-autopairs'

@@ -8,4 +8,5 @@ require('plugins.telescope')
 require('plugins.treesitter')
 require('plugins.toggleterm')
 require('plugins.lspzero')
+require('plugins.undotree')
 
