@@ -58,7 +58,7 @@ end
 M.load_commands = function()
   local cmd = vim.cmd
   cmd "set whichwrap+=<,>,[,],h,l"
-  
+
   -- transparent window
   cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
   cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none"

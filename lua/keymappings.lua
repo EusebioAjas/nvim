@@ -40,11 +40,6 @@ function M.load_insert_mode_keymaps()
   -- move current line/block
   keymap('i', '<S-j>', '<ESC>:m .+1<CR>==gi', noremap_opt)
   keymap('i', '<S-k>', '<ESC>:m .-2<CR>==gi', noremap_opt)
-  -- TAB complete
-  keymap('i', '<C-j>', 'pumvisible() ? "\\<down>" : "\\<C-j>"', expr_noremap_opt)
-  keymap('i', '<C-k>', 'pumvisible() ? "\\<up>" : "\\<C-k>"', expr_noremap_opt)
-  keymap('i', '<CR-m>', 'pumvisible() ? complete_info()["selected"] != "-1" ? "\\<Plug>(completion_confirm_completion)" : "\\<c-e>\\<CR>" : "\\<CR>"', { expr = true })
-  --vim.api.nvim_set_keymap('i', '<C-m>', 'pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>', {expr = true })
 end
 
 function M.load_visual_mode_keymaps()
