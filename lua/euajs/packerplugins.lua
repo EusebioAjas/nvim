@@ -60,10 +60,11 @@ return require('packer').startup(function()
   use 'unblevable/quick-scope'
 
   -- BufferLine
-  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
-
-  -- es6 and react snippets
-  -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile' }
+  use {
+    'akinsho/nvim-bufferline.lua',
+    branch = 'main',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
 
   -- Git
   use 'TimUntersberger/neogit'
@@ -73,6 +74,6 @@ return require('packer').startup(function()
   -- General plugins
   use 'windwp/nvim-autopairs'
   use 'kevinhwang91/nvim-bqf'
-  use 'akinsho/toggleterm.nvim'
+  use {'akinsho/toggleterm.nvim', branch = 'main'}
 end)
 
