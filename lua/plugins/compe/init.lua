@@ -67,17 +67,10 @@ _G.s_tab_complete = function()
   end
 end
 
-local opts = { expr = true, noremap = true }
 local expr_opt = { expr = true }
 
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", expr_opt)
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", expr_opt)
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", expr_opt)
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", expr_opt)
-
- _G.complete_info_tab = function()
-  return vim.fn.pumvisible() == 1 and [[\<CR>]] or [[\<C-Y>]]
-end
-
-vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.complete_info_tab()', opts)
 
