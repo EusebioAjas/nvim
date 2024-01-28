@@ -12,10 +12,14 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use {'wbthomason/packer.nvim', opt = true}
   -- Nvimtree
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+    },
+ }
   -- LSP config
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
   use 'onsails/lspkind-nvim'
   -- Autocomplete and languge pack
   use 'hrsh7th/nvim-compe'
